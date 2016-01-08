@@ -2,22 +2,21 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from input_arff import Input_arff
 import os
 import sys
-import commands 
-wd = commands.getoutput("echo $CHAINER_PYTHON")
-sys.path.append(wd)
+#you set the script path for input_anvil parsing_anvil
+sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
+from input_arff import Input_arff
 
 
 class TestSequenceFunctions(unittest.TestCase):
 
     def setUp(self):
-        print("set up")
+        pass 
 
     def test_input(self):
         data_path = os.environ["OPENSMILE_PYTHON"]
-        inputter = Input_arff(data_path + "/data/data2.txt")
+        inputter = Input_arff(data_path + "/wav_list")
         inputter.input_data()
 
 if __name__ == '__main__':

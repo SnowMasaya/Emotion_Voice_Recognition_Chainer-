@@ -4,7 +4,6 @@
 import unittest
 import os
 import sys
-import subprocess 
 #you set the script path for input_anvil parsing_anvil
 sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 from input_anvil import Input_anvil

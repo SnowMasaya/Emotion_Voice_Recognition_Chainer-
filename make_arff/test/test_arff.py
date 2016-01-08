@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from make_arff import Make_arff
 import os
 import sys
-import commands
-wd = commands.getoutput("echo $CHAINER_PYTHON")
-sys.path.append(wd)
+#you set the script path for input_anvil parsing_anvil
+sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
+from make_arff import Make_arff
 
 
 class TestSequenceFunctions(unittest.TestCase):

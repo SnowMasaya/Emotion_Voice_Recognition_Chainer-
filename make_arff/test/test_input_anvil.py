@@ -4,11 +4,8 @@
 import unittest
 import os
 import sys
-import commands
-wd = commands.getoutput("echo $CHAINER_PYTHON")
-sys.path.append(wd)
-wd = commands.getoutput("echo $OPENSMILE_PYTHON")
-sys.path.append(wd)
+#you set the script path for input_anvil parsing_anvil
+sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 from input_anvil import Input_anvil
 
 class TestSequenceFunctions(unittest.TestCase):
