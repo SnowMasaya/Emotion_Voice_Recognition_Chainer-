@@ -1,9 +1,9 @@
 parsing_anvil:
-    track: ".*<track name.*"
-    re_xml_index: ".*<el index=\"\d*\" start=\"\d*\.\d*\".*"
-    re_xml_index2: ".*<el index=\"\d*\" start=\"\d*\" end=\"\d*\.\d*\".*"
-    re_xml_attribute: ".*<attribute\ name=.*true.*"
-    female: ".*track name=\"Female.*\".*"
-    male: ".*track name=\"Male.*\".*"
-    index: "index=\"\d*\""
-    emotion_dect: "name=\".*\""
+    track: .*<track name.*
+    re_xml_index: .*<el index=\"\d*\" start=\"\d*\.\d*\".*
+    re_xml_index2: .*<el index=\"\d*\" start=\"\d*\" end=\"\d*\.\d*\".*
+    re_xml_attribute: .*<attribute\ name=.*true.*
+    female: .*track name=\"Female.*\".*
+    male: .*track name=\"Male.*\".*
+    index: index=\"\d*\"
+    emotion_dect: name=\".*\"

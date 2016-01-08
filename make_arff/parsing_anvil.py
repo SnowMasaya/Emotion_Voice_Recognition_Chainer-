@@ -3,20 +3,24 @@
 
 import re
 import os
+from parsing_anvil_model import Parsing_anvil_model
 
 
 class Parsing_anvil():
 
     def __init__(self, anvil_list):
+
+        parsing_anvil_model = Parsing_anvil_model()
+
         self.anvil_list = anvil_list
-        self.track = re.compile(".*<track name.*")
-        self.re_xml_index = re.compile(".*<el index=\"\d*\" start=\"\d*\.\d*\".*")
-        self.re_xml_index2 = re.compile(".*<el index=\"\d*\" start=\"\d*\" end=\"\d*\.\d*\".*")
-        self.re_xml_attribute = re.compile(".*<attribute\ name=.*true.*")
-        self.female = re.compile(".*track name=\"Female.*\".*")
-        self.male = re.compile(".*track name=\"Male.*\".*")
-        self.index = re.compile("index=\"\d*\"")
-        self.emotion_dect = re.compile("name=\".*\"")
+        self.track = re.compile(parsing_anvil_model.parsing_anvil.track)
+        self.re_xml_index = re.compile(parsing_anvil_model.parsing_anvil.re_xml_index)
+        self.re_xml_index2 = re.compile(parsing_anvil_model.parsing_anvil.re_xml_index2)
+        self.re_xml_attribute = re.compile(parsing_anvil_model.parsing_anvil.re_xml_attribute)
+        self.female = re.compile(parsing_anvil_model.parsing_anvil.female)
+        self.male = re.compile(parsing_anvil_model.parsing_anvil.male)
+        self.index = re.compile(parsing_anvil_model.parsing_anvil.index)
+        self.emotion_dect = re.compile(parsing_anvil_model.parsing_anvil.emotion_dect)
         self.emotion = {"Anger": 0, "Happiness": 1, "Excited": 2, "Sadness": 3, "Frustration": 4, "Fear": 5, "Surprise": 6, "Other": 7, "Neutral state": 8, "Disgust": 9}
         self.past_anvil = ""
         self.arff_path = os.environ["OPENSMILE_DATA"]
