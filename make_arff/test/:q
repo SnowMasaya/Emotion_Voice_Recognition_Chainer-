@@ -1,0 +1,12 @@
+export OPENSMILE_PYTHON=/home/tie303523/openSMILE-2.1.0/python_script/
+export OPENSMILE_DATA=/home/tie303523/openSMILE-2.1.0/output/IS2010/
+export OPENSMILE_PATH=/home/tie303523/openSMILE-2.1.0/bin/linux_x64_standalone_static/SMILExtract
+export OPENSMILE_CONFIG=/home/tie303523/openSMILE-2.1.0/config/IS09_emotion.conf
+export OPENSMILE_CONFIG_2010=/home/tie303523/openSMILE-2.1.0/config/IS10_paraling.conf
+export OPENSMILE_SPLIT_ARFF=/home/tie303523/Voice_data/OGVC/OGVC2/Natural/wav/split_arff/
+export OPENSMILE_SPLIT_ARFF_2010=/home/tie303523/Voice_data/OGVC/OGVC2/Natural/wav/split_arff_2010/
+export DATA_SPLIT_PATH=/home/tie303523/weka-3-6-12/nlp/script/data/
+export OPENSMILE_PATH="/home/tie303523/openSMILE-2.1.0/bin/linux_x64_standalone_static/SMILExtract"
+export OPENSMILE_CONFIG="/home/tie303523/openSMILE-2.1.0/config/IS09_emotion.conf"
+export OPENSMILE_SCRIPT="/home/tie303523/chainer_emotion/Emotion_Voice_REcognize_Chainer"
+export OPENSMILE_OUTPUT="/home/tie303523/chainer_emotion/Emotion_Voice_Recognize_Chainer/make_arff/test/output"

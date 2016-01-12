@@ -74,3 +74,4 @@ my_env/
 *.pyc
 .envrc
 *.swp
+output/*
