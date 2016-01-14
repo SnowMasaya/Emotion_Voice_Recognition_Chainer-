@@ -18,6 +18,9 @@ from make_arff import Make_arff
    Args:
        config: you can choose the how to extract the Emotion feature
        output dir: you can modified the output directory. initial directory is the output
+       wav_list: you have to set the wav file list
+       * If you would like to try the japanese voice you have to cut the voice. However I alreay set the japanese split voice.
+       split japanese voise: OGVC_wav_split_list(wav list) and set the directory \"os.environ[\"DATA_SPLIT_PATH\"]\" 
    Output:
        arff file(Voice)
 """
