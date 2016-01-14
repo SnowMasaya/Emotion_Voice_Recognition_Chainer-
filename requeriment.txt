@@ -1,3 +1,5 @@
 numpy
 chainer
 PyYAML
+scipy
+sklearn

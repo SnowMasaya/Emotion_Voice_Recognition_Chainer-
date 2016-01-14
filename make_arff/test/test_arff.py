@@ -8,7 +8,6 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 from make_arff import Make_arff
 
-
 """
    Making the arff file for weka format by using the voice.
    You can choose Make the 2 type of the arff file
