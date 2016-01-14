@@ -19,5 +19,6 @@
 #
 #
 # -----------------------------------------------------------------------------
+python test_arff.py -c OPENSMILE_CONFIG
 python test_anvil_parsing.py > arff_emo_list_change_label
 sort -u  arff_emo_list_change_label > arff_emo_list_change_label_sort
