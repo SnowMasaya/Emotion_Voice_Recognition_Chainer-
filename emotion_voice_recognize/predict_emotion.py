@@ -18,30 +18,29 @@ from chainer import serializers
 import net
 
 
-class Emotion_voice():
+class Predict_Emotion():
 
-    def __init__(self, x_data, y_data, iteration_number, feature, initmodel, gpu = -1):
+    def __init__(self, x_data, y_data, feature, initmodel, gpu = -1):
         self.N = 5000
         self.N_test = 766
         self.total = self.N + self.N_test
         self.emotion_weight = {0: self.total / 716, 1: self.total / 325, 2: self.total / 1383, 3: self.total / 743, 4: self.total / 2066, 5: self.total / 74, 6: self.total / 17, 7: self.total / 35, 8: self.total / 404,  9: self.total / 3}
         self.x_data = x_data.astype(np.float32)
+        self.x_data = np.vstack((self.x_data, self.x_data))
         self.y_data = y_data.astype(np.int32)
-        self.y_predict_data = []
+        self.y_data = np.vstack((self.y_data, self.y_data))
         if feature == "IS2009":
             self.input_layer = 384
         elif feature == "IS2010":
             self.input_layer = 1582
         self.n_units = 256
         self.output_layer = 10
-        self.batchsize = 25
         self.model = L.Classifier(net.EmotionRecognitionVoice(self.input_layer, self.n_units, self.output_layer))
         self.gpu = gpu
         self.__set_cpu_or_gpu()
         self.emotion = {0: "Anger", 1: "Happiness", 2: "Excited", 3: "Sadness", 4: "Frustration", 5: "Fear", 6: "Surprise", 7: "Other", 8: "Neutral state", 9: "Disgust"}
         # Init/Resume
         serializers.load_hdf5(initmodel, self.model)
-
 
     def __set_cpu_or_gpu(self):
         # Prepare multi-layer perceptron model, defined in net.py
