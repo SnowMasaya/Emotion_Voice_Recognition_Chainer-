@@ -3,6 +3,7 @@
 """Chainer Emotion Recognition by Voice 
 Recognition Emotion by Voice.
 Calculate accuracy, loss, recall, precision
+bias function is the apply the bias to output
 """
 
 from __future__ import absolute_import
@@ -24,7 +25,7 @@ import net
 
 class Emotion_voice():
 
-    def __init__(self, x_data, y_data, iteration_number, gpu = -1):
+    def __init__(self, x_data, y_data, iteration_number, feature, gpu = -1):
         self.N = 5000
         self.N_test = 766
         self.total = self.N + self.N_test
@@ -35,13 +36,15 @@ class Emotion_voice():
         self.x_data = x_data.astype(np.float32)
         self.y_data = y_data.astype(np.int32)
         self.y_predict_data = [] 
-        #self.x_data = self.__bias(self.x_data, self.y_data)
         scaler = preprocessing.StandardScaler()
         self.x_data = scaler.fit_transform(self.x_data)
         self.iteration_number = iteration_number
-        self.input_layer = 384
+        if feature == "IS2009":
+            self.input_layer = 384
+        elif feature == "IS2010":
+            self.input_layer = 1582 
         self.n_units = 256
-        self.output_layer = 256
+        self.output_layer = 10 
         self.batchsize = 25 
         self.model = L.Classifier(net.EmotionRecognitionVoice(self.input_layer, self.n_units, self.output_layer))
         self.gpu = gpu
@@ -81,6 +84,7 @@ class Emotion_voice():
                         o.write(g.dump())
                     print('graph generated')
 
+                #Apply the bias for output
                 self.model.y.data = self.__bias(self.model.y.data, t.data)
                 sum_loss += float(self.model.loss.data) * len(t.data)
                 sum_accuracy += float(self.model.accuracy.data) * len(t.data)
