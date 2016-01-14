@@ -27,6 +27,7 @@ def parse_args():
 
     p.add_argument('-c', '--config', type=str, help='\'OPENSMILE_CONFIG\' or \'OPENSMILE_CONFIG_2010\'')
     p.add_argument('-o', '--output_dir', default='output/',type=str, help='[output dir]  you set output dir')
+    p.add_argument('-w', '--wav_list', default='wav_list',type=str, help='wav_list  you set wav file list')
     args = p.parse_args()
 
     # check args
@@ -45,7 +46,7 @@ def test_input():
     data_path = os.environ["OPENSMILE_PYTHON"]
     config_file = os.environ[args.config]
     output_dir = args.output_dir
-    make_arff = Make_arff(data_path + "/wav_list", config_file, output_dir)
+    make_arff = Make_arff(data_path + args.wav_list, config_file, output_dir)
     make_arff.extract()
 
 if __name__ == '__main__':
