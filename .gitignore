@@ -75,3 +75,5 @@ my_env/
 .envrc
 *.swp
 output/*
+emotion_recognition.*
+*.dot
