@@ -9,11 +9,10 @@ class Input_anvil():
 
     def input_data(self):
         f = open(self.file_name, 'r')
-        anvil_list = Input_anvil.read_line(f)
+        anvil_list = self.read_line(f)
         return anvil_list
 
-    @staticmethod
-    def read_line(f):
+    def read_line(self, f):
         anvil_list = []
         for line in f:
             data = line.replace("\n", "")
