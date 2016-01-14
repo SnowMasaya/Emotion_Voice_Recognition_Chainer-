@@ -31,5 +31,9 @@ echo export OPENSMILE_PATH=OPENSMILE_PATH >>.envrc
 echo export OPENSMILE_CONFIG=OPENSMILE_CONFIG_PATH >> .envrc
 #You set the Data Path
 echo export OPENSMILE_DATA=OPENSMILE_DATA >> .envrc
+#You set the arff output Path
+echo export OPENSMILE_OUTPUT=OPENSMILE_OUTPUT >> .envrc
+#You set the ARFF Path
+echo export OPENSMILE_ARFF=OPENSMILE_ARFF >> .envrc
 direnv allow
 source $OPENSMILE_PYTHON/my_env/bin/activate

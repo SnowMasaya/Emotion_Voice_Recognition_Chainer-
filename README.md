@@ -43,7 +43,12 @@ echo numpy > requeriment.txt
 pip install -r requeriment.txt
 echo export CHAINER_PYTHON="Your Chainer Path" >> .envrc
 echo export OPENSMILE_PATH="Your OpenSMILE Path" >>.envrc
-echo export OPENSMILE_CONFIG="Your OpenSMILE Config file Path" >> .envrc
+echo export OPENSMILE_PYTHON="Your OpenSMILE Path" >>.envrc
+echo export OPENSMILE_CONFIG="Your OpenSMILE Config IS2009 file" >> .envrc
+echo export OPENSMILE_CONFIG_2010="Your OpenSMILE Config IS2010 file" >> .envrc
+echo export OPENSMILE_DATA="Your OpenSMILE DATA Path" >> .envrc
+echo export OPENSMILE_OUTPUT="Your OpenSMILE Output Path" >> .envrc
+echo export OPENSMILE_ARFF="Your OpenSMILE ARFF Path" >> .envrc
 direnv allow
 source 
 source "Your virtualenv path"/my_env/bin/activate
