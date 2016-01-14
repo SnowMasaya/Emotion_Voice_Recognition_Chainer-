@@ -9,27 +9,24 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 from make_arff import Make_arff
 
 
-"""Applies forward propagation with chaining backward references.
-   Basic behavior is expressed in documentation of :class:`Function`
-   class.
+"""
+   Making the arff file for weka format by using the voice.
+   You can choose Make the 2 type of the arff file
+   Emotion feature 2009 http://emotion-research.net/sigs/speech-sig/emotion-challenge/INTERSPEECH-Emotion-Challenge-2009_draft.pdf
+   Emotion feature 2010 http://emotion-research.net/sigs/speech-sig/The%20INTERSPEECH%202010%20Paralinguistic%20Challenge.pdf
    .. note::
-   If the :data:`~Variable.data` attribute of input variables exist on
-   GPU device, then, before it calls :meth:`forward` method, the
-   appropriate device is selected, so in most cases implementers do
-   not need to take care of device selection.
    Args:
-       inputs: Tuple of input :class:`Variable` objects. The volatile
-           flags of all input variables must agree.
-   Returns:
-       One :class:`Variable` object or a tuple of multiple
-       :class:`Variable` objects.
+       config: you can choose the how to extract the Emotion feature
+       output dir: you can modified the output directory. initial directory is the output
+   Output:
+       arff file(Voice)
 """
 
 def parse_args():
     p = ArgumentParser(description='Choose Make arff output config')
 
     p.add_argument('-c', '--config', type=str, help='\'OPENSMILE_CONFIG\' or \'OPENSMILE_CONFIG_2010\'')
-    p.add_argument('-o', '--output_dir', default='output',type=str, help='[output dir]  you set output dir')
+    p.add_argument('-o', '--output_dir', default='output/',type=str, help='[output dir]  you set output dir')
     args = p.parse_args()
 
     # check args
