@@ -16,6 +16,7 @@ from emotion_voice import Emotion_voice
    .. note::
    Args:
        arff_label_list: you set the arff_label file list
+       gpu: you set the gpu number
        feature: IS2009 orIS2010
        For example: arff_emo_list_change_label_sort
                     arff_emo_list_IS2010
