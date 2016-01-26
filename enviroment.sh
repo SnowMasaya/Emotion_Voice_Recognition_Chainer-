@@ -29,7 +29,7 @@ echo export OPENSMILE_PATH=OPENSMILE_PATH >>.envrc
 #or
 #You set the openSMILE-x.x.x/config/IS10_paraling.conf PATH 
 echo export OPENSMILE_CONFIG=OPENSMILE_CONFIG_PATH >> .envrc
-#You set the Data Path
+#You set the Data Path for Parsing Info file
 echo export OPENSMILE_DATA=OPENSMILE_DATA >> .envrc
 #You set the arff output Path
 echo export OPENSMILE_OUTPUT=OPENSMILE_OUTPUT >> .envrc

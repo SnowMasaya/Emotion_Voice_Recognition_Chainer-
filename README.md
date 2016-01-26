@@ -41,17 +41,21 @@ You edit the enviroment.sh
 virtualenv -p python3.xx
 echo numpy > requeriment.txt
 pip install -r requeriment.txt
-echo export CHAINER_PYTHON="Your Chainer Path" >> .envrc
-echo export OPENSMILE_PATH="Your OpenSMILE Path" >>.envrc
-echo export OPENSMILE_PYTHON="Your OpenSMILE Path" >>.envrc
-echo export OPENSMILE_CONFIG="Your OpenSMILE Config IS2009 file" >> .envrc
-echo export OPENSMILE_CONFIG_2010="Your OpenSMILE Config IS2010 file" >> .envrc
-echo export OPENSMILE_DATA="Your OpenSMILE DATA Path" >> .envrc
-echo export OPENSMILE_OUTPUT="Your OpenSMILE Output Path" >> .envrc
-echo export OPENSMILE_ARFF="Your OpenSMILE ARFF Path" >> .envrc
+echo export OPENSMILE_PYTHON=`pwd` > .envrc
+#You set the openSMILE-x.x.x/bin/linux_x64_standalone_static/SMILExtract PATH 
+echo export OPENSMILE_PATH=OPENSMILE_PATH >>.envrc
+#You set the openSMILE-x.x.x/config/IS09_emotion.conf PATH 
+#or
+#You set the openSMILE-x.x.x/config/IS10_paraling.conf PATH 
+echo export OPENSMILE_CONFIG=OPENSMILE_CONFIG_PATH >> .envrc
+#You set the Data Path for Parsing Info file
+echo export OPENSMILE_DATA=OPENSMILE_DATA >> .envrc
+#You set the arff output Path
+echo export OPENSMILE_OUTPUT=OPENSMILE_OUTPUT >> .envrc
+#You set the ARFF Path
+echo export OPENSMILE_ARFF=OPENSMILE_ARFF >> .envrc
 direnv allow
-source 
-source "Your virtualenv path"/my_env/bin/activate
+source $OPENSMILE_PYTHON/my_env/bin/activate
 ```
 
 ```
@@ -64,8 +68,11 @@ Prepare arff file
 If you don't know how to make a arff file please read below repository
 https://github.com/tech-sketch/Make-arff-for-Emotion-reconize-by-voice
 ```
-*You execute python 
-python test/emotion_voice_IS2010_test_adjust.py
+*You execute python example
+**prepare arff file
+python make_arff/test/test_arff.py --config OPENSMILE_CONFIG
+**chainer learn
+python emotion_voice_recognize/test/test_emotion_voice.py --arff_label arff_emo_list_change_label_sort --feature IS2009 
 ```
 #
 ### Licence
