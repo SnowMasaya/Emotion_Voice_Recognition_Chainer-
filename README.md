@@ -5,6 +5,10 @@ This tool is the Speech Emotion Recognition
 
 <img src="https://qiita-image-store.s3.amazonaws.com/0/10496/1012efb4-b348-e755-12f1-aa970a9b11fa.jpeg" alt="赤ちゃん" width="400" height="300" />
 
+## Japanese Reference Page
+
+http://tech-sketch.jp/2015/10/chainer.html
+
 ## Description
 This tool is recognition emotion by humam voice
 
